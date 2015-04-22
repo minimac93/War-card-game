@@ -1,4 +1,5 @@
 public class Card {
+
     // declare suit values as public static ints so they can be accessed outside of the class
     public static final int CLUBS = 1, DIAMONDS = 2, HEARTS = 3, SPADES = 4;
     // declare values for face cards as public static ints so they can be accessed outside of the class
@@ -11,6 +12,7 @@ public class Card {
     /**
         constructor takes suit and rank to create Card
         @param suit Integer value of suit
+        @param rank Integer value of rank
     */
     public Card(int suit, int rank) {
         // throw exception if the suit is outside possible ranks, otherwise set suit
@@ -37,7 +39,7 @@ public class Card {
 
     /**
         accessor to get suit as integer
-        return Suit as integer
+        @return Suit as integer
     */
     public int getSuit() {
         return suit;
@@ -45,7 +47,7 @@ public class Card {
 
     /**
         accessor to get rank as integer
-        return Rank as integer
+        @return Rank as integer
     */
     public int getRank() {
         return rank;
@@ -53,7 +55,7 @@ public class Card {
 
     /**
         toString method provides text info on card (i.e. King of Clubs, etc.)
-        return String of card information
+        @return String of card information
     */
     public String toString() {
         // declare strings for suit and rank
@@ -100,6 +102,7 @@ public class Card {
 
     /**
         tests if two cards are equal and returns true or false
+        @param that Card object to be compared to
         @return Boolean of whether the two cards are equal
     */
     public boolean equals(Card that) {
