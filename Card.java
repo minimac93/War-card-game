@@ -30,11 +30,11 @@ public class Card {
 
     /**
         copy constructor takes another Card to produce new one
-        @param otherCard Card object to the copied
+        @param otherCard Card object to be copied
     */
     public Card(Card otherCard) {
         suit = otherCard.suit;
-        rank = otherCard.suit;
+        rank = otherCard.rank;
     }
 
     /**
@@ -63,22 +63,25 @@ public class Card {
 
         // switch suit and set suitString based on value
         switch (suit) {
-            case 1:
+            case CLUBS:
                 suitString = "Clubs";
                 break;
-            case 2:
+            case DIAMONDS:
                 suitString = "Diamonds";
                 break;
-            case 3:
+            case HEARTS:
                 suitString = "Hearts";
                 break;
-            default: // only when case is 4
+            default: // only when case is SPADES
                 suitString = "Spades";
                 break;
         }
 
         // switch rank and set rankString based on value
         switch (rank) {
+            case 1:
+                rankString = "Ace";
+                break;
             case 11:
                 rankString = "Jack";
                 break;
@@ -87,9 +90,6 @@ public class Card {
                 break;
             case 13:
                 rankString = "King";
-                break;
-            case 1:
-                rankString = "Ace";
                 break;
             default: // if the rank is 2-10
                 rankString = String.valueOf(rank);
@@ -107,5 +107,36 @@ public class Card {
     */
     public boolean equals(Card that) {
         return (this.suit == that.suit && this.rank == that.rank);
+    }
+
+    /**
+        compares to cards by their rank
+        @param card1 First Card object
+        @param card2 Second Card object
+        @return > 0 if card1 is higher, < 0 if card2 is higher, and 0 if equal
+    */
+    public static int compare(Card card1, Card card2) {
+        // see if they are equal
+        if (card1.rank == card2.rank)
+            return 0;
+        // then see if one is an ace
+        else if (card1.rank == ACE)
+            return 1;
+        else if (card2.rank == ACE)
+            return -1;
+        // then see which one is higher otherwise
+        else if (card1.rank > card2.rank)
+            return 1;
+        else
+            return -1;
+    }
+
+    /**
+        takes an integer from 0 to 51 and returns the corresponding card
+        @param n Integer value for card
+        @return Correponding card
+    */
+    public static Card intToCard(int n) {
+        return new Card((n/13) + 1,(n%13) + 1);
     }
 }
