@@ -6,6 +6,6 @@ public class QueueException extends RuntimeException {
         @param message Error message
     */
     public QueueException(String message) {
-        super(s);
+        super(message);
     }
 }
