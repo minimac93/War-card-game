@@ -1,13 +1,14 @@
+/** basic requirements for an implementation of a Queue */
 public interface QueueInterface {
 
   /** Determines whether a queue is empty.
-      @returns true if the queue is empty; otherwise returns false.
+      @return true if the queue is empty; otherwise returns false.
   */
   public boolean isEmpty();
 
   /** Adds an item at the back of a queue.
       @param newItem is the item to be inserted.
-      @throwsQueueException if newItem cannot be added to the queue.
+      @throws QueueException if newItem cannot be added to the queue.
   */
   public void enqueue(Object newItem) throws QueueException;
 
