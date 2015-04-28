@@ -1,3 +1,4 @@
+/** stores information about a playing card */
 public class Card {
 
     // declare suit values as public static ints so they can be accessed outside of the class
@@ -113,7 +114,7 @@ public class Card {
         compares to cards by their rank
         @param card1 First Card object
         @param card2 Second Card object
-        @return > 0 if card1 is higher, < 0 if card2 is higher, and 0 if equal
+        @return positive if card1 is higher, negative if card2 is higher, and 0 if equal
     */
     public static int compare(Card card1, Card card2) {
         // see if they are equal

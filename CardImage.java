@@ -15,7 +15,6 @@ public class CardImage extends Card {
     /**
         alternate constructor takes Card object
         @param rawCard Card object to be emulated
-        @param image ImageIcon of card image
     */
     public CardImage(Card rawCard) {
         super(rawCard);
