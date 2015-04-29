@@ -129,7 +129,7 @@ public class WarGUI extends JFrame {
         bottomPanel = new JPanel();
 
         // footer material
-        footer = new JLabel("War v0.9, created by Liam Kelley");
+        footer = new JLabel("War v1.0, created by Liam Kelley");
         footer.setForeground(Color.DARK_GRAY);
         bottomPanel.add(footer);
 
